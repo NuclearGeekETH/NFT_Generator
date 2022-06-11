@@ -7,8 +7,8 @@ import re
 import os
 import numpy as np
 
-namePrefix = "Couture Night Out"
-description = "Couture Night Out is a collection of 7500 diverse fashin models that are digitally hand drawn using watercolour wearing Pros&Cons fashion designs. Our mission is to raise attention to ethically made and slow fashion, gender equality within the garment industry, and the empowerment of all women, girls, and those who identify as female."
+namePrefix = "Framed Eyes"
+description = "A collection of NFTs built with Python"
 baseUri = "ipfs://NewUriToReplace"
 
 layer1 = 'Eye/'
@@ -19,7 +19,10 @@ base = 'layers/'
 
 combination_list = []
 
-for x in range(0,500):
+num = 0
+max_nfts = 500
+
+while num < max_nfts:
     def get_numbers_from_filename(filename):
         return re.search('#(.*).png',filename).group(1)
 
@@ -65,10 +68,10 @@ for x in range(0,500):
         # img.alpha_composite(Image.open(layer4_path).convert('RGBA'))
         # img.alpha_composite(Image.open(layer5_path).convert('RGBA'))
         # img.alpha_composite(Image.open(layer6_path).convert('RGBA'))
-        img.save('build/images/' + str(x) + ".png")
+        img.save('build/images/' + str(num) + ".png")
         def create_meta():
             BASE_JSON = {
-            "name": namePrefix + ' #' + str(x),
+            "name": namePrefix + ' #' + str(num),
             "description": description,
             "image": baseUri,
             "attributes": []
@@ -82,12 +85,15 @@ for x in range(0,500):
             # item_json['attributes'].append({ 'trait_type': layer5[:-1], 'value': layer5_draw })
             # item_json['attributes'].append({ 'trait_type': layer6[:-1], 'value': layer6_draw })
             out = json.dumps(item_json)
-            jsonoutput = open('build/metadata/' + str(x) + '.json', 'w')
+            jsonoutput = open('build/metadata/' + str(num) + '.json', 'w')
             jsonoutput.write(out)
 
         create_meta()
 
-    print(str(x) + ' created')
+        print(str(num) + ' created')
+
+        num+=1
+
 
 
 
