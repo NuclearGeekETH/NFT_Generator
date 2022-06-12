@@ -20,9 +20,9 @@ You can use transparent layers too, just add them in the appropriate folder.
 
 Set the number of NFTs you want to create in line 23 for max_nfts. Set num on line 22 to the starting number you want. I like 0 but some people use 1. You can change it to any number to add to a collection as well.
 
-This script will also create metadata for your collection as well as ensure duplicates are not created.
+This script will also create metadata for your collection. The folder names will be the trait type and the layer name before the # will be the value of the trait type. 
 
-If you keep seeing "combination exists" in your console then you might not have enough variety to create as many items as you are tyring to.
+There is a check to ensure duplicates are not created so every NFT is unique. If you keep seeing "combination exists" in your console then you might not have enough variety in your layers to create as many NFTs as you are tyring to.
 
 You will need to append the "image" location in each json for your final collection if you want to mint it. 
 
