@@ -1,5 +1,7 @@
 NFT and metadata generator created by NuclearGeek
 
+[🐦 Twitter](https://twitter.com/NuclearGeekNFT)
+
 Create your own NFT collection using python
 
 Copy the repository to your local drive
@@ -26,8 +28,12 @@ You will need to append the "image" location in each json for your final collect
 
 Use append_json.py to update your metadata with the image uri for your collection.
 
+Optional:
+
 Use removeJSONending.py to remove the .json file extension if you only want data files and not json. I would recommend backing up the .json files before doing this.
 copy/paste removeJSONending.py to your folder with your json metadata and run removeJSONending.py to remove .json from all files in the folder.
+
+Use rename.py to rename or renumber files in a folder. This is helpful if you are trying to combine images you create or have to make edits.
 
 Have Fun! 
 
