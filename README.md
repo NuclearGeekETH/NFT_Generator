@@ -1,6 +1,6 @@
 NFT and metadata generator created by NuclearGeek
 
-[🐦 Twitter](https://twitter.com/NuclearGeekNFT)
+[Twitter](https://twitter.com/NuclearGeekETH)
 
 Create your own NFT collection using python
 
