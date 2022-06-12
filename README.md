@@ -37,5 +37,7 @@ Use rename.py to rename or renumber files in a folder. This is helpful if you ar
 
 Use giffer.py to create a gif of the images you create.
 
+Use collage.py to create a collage of images. Place images in the collage folder and run collage.py to generate the image. You can adjust width, height, and row for size and number of images you want. 
+
 Have Fun! 
 
