@@ -14,7 +14,7 @@ Add your image layers to the layers folder. You can create as many subfolders as
 
 Make sure each file name has a decimal weight after the #. This sets the rarity weight of the layer.
 
-The layer filenames should look like this: metal#0.1.png. This would have a 10% chance of showing up.
+The layer filenames should look like this: metal#0.1.png. This would have a 10% chance of showing up. The total weight in each folder from all the images in that folder need to add up to 1.
 
 You can use transparent layers too, just add them in the appropriate folder.
 
