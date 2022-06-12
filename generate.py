@@ -40,7 +40,7 @@ while num < max_nfts:
             weights = get_numbers_from_filename(filename)
             layer_weights.append(weights)
             filenames.append(filename)
-        draw = np.random.choice(filenames, 1, p=layer_weights,)
+        draw = np.random.choice(filenames, 1, p=layer_weights)
         file_str = ' '.join(str(e) for e in draw)
         trait_name = get_names_from_filename(file_str)
         return trait_name, file_str
