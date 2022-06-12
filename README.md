@@ -35,5 +35,7 @@ copy/paste removeJSONending.py to your folder with your json metadata and run re
 
 Use rename.py to rename or renumber files in a folder. This is helpful if you are trying to combine images you create or have to make edits.
 
+Use giffer.py to create a gif of the images you create.
+
 Have Fun! 
 
