@@ -14,6 +14,9 @@ baseUri = "ipfs://NewUriToReplace"
 layer1 = 'Eye/'
 layer2 = 'Eyelid/'
 layer3 = 'Frame/'
+# layer4 = 'Unique/'
+# layer5 = 'Legs/'
+# layer6 = 'Feet/'
 
 base = 'layers/'
 
