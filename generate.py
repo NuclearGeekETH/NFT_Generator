@@ -1,8 +1,5 @@
 import argparse
 import json
-from copy import deepcopy
-from math import comb
-import random
 from PIL import Image
 import re
 import os
