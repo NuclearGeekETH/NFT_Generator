@@ -14,15 +14,17 @@ def rename_files(directory: str = None, starting_offset: int = None):
     :param starting_offset: the starting numeric value for the offset
     :return: nothing
     :raises ValueError if the starting_offset is not present or the
-    :raises Excpetion if the starting_offset is not present or the
+    :raises Exception if the directory to be renamed is the directory which the script is running in
     """
+    # if starting_offset is not set then raise ValueError
     if not starting_offset:
         raise ValueError("The starting_offset is not set.")
 
+    # if directory is not set then get the current working directory
     if not directory:
-        # get the current working directory
         directory = os.getcwd()
 
+    # get the directory where this script is running and script that we aren't about the rename this script
     current_script_path = os.path.dirname(os.path.realpath(__file__))
     if directory == current_script_path:
         raise Exception("You are about to rename all the files in the directory containing this scripts, you probably want to run this in a different directory or specify the directory at the command line.")
@@ -34,10 +36,10 @@ def rename_files(directory: str = None, starting_offset: int = None):
     files.sort(key=lambda x: [int(c) if c.isdigit() else c for c in re.split('(\d+)', x)])
 
     # renumber the files starting at 4001
-    count = 0
+    count = starting_offset
     for file in files:
-        print("renaming {orig} to {name}".format(orig=file, name=str(count+starting_offset)+'.json'))
-        #os.rename(files[i], str(i+4001)+'.json')
+        print("renaming {orig} to {name}".format(orig=file, name=str(count)+'.json'))
+        os.rename(file, str(count)+'.json')
         count += 1
 
 
@@ -48,4 +50,3 @@ if __name__ == "__main__":
                         help='the numerical offset to start the renaming at.')
     arguments = parser.parse_args()
     rename_files(arguments.directory, arguments.starting_offset)
-    
