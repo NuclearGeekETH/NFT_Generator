@@ -6,7 +6,15 @@ Create your own NFT collection using python
 
 Copy the repository to your local drive
 
-You should be able to just install missing dependencies with pip and run generate.py to generate your first collection of Framed Eyes made by NuclearGeek.
+## Setup ##
+
+setup a virtual environment and activate it and then install the requirements
+
+    virtualenv venv
+    . venv/bin/activate
+    pip install -r requirements.txt
+
+Run generate.py to generate your first collection of Framed Eyes made by NuclearGeek.
 
 To create a custom collection:
 
