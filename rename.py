@@ -37,8 +37,9 @@ def rename_files(directory: str = None, starting_offset: int = None):
     # renumber the files starting at 4001
     count = starting_offset
     for file in files:
-        print("renaming {orig} to {name}".format(orig=file, name=str(count)+'.json'))
-        os.rename(file, str(count)+'.json')
+        new_filename = f'{count}.json'
+        print(f"renaming {file} to {new_filename}")
+        os.rename(file, new_filename)
         count += 1
 
 

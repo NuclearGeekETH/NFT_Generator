@@ -16,7 +16,9 @@ def remove_json_ending(directory: str = None):
 
     for filename in os.listdir(directory):
         if filename.endswith(".json"):
-            os.rename(filename, filename[:-5])
+            new_filename = filename[:-5]
+            print(f"renaming {filename} to {new_filename}")
+            os.rename(filename, new_filename)
 
 
 if __name__ == "__main__":
