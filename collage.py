@@ -57,9 +57,9 @@ if __name__ == "__main__":
     parser.add_argument('-W', '--width', default=1920, type=int, help='the width of the collage')
     parser.add_argument('-H', '--height', default=1080, type=int, help='the height of the collage')
     parser.add_argument('-r', '--rows', default=8, type=int, help='the number of rows in the collage')
-    parser.add_argument('-p', '--path', default='collage', type=int,
+    parser.add_argument('-p', '--path', default='collage', type=str,
                         help='the directory which contains the files to be made into the collage')
-    parser.add_argument('-o', '--output_filename', default='collage', type=int,
+    parser.add_argument('-o', '--output_filename', default='collage', type=str,
                         help='the name of the output file, don\'t include the file extension')
     arguments = parser.parse_args()
     create_collage(arguments.width, arguments.height, arguments.rows, arguments.path, arguments.output_filename)

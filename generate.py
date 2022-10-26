@@ -110,7 +110,7 @@ if __name__ == "__main__":
     parser.add_argument('-d', '--description', default="A collection of NFTs built with Python", type=str,
                         help='The description of your collection.')
     parser.add_argument('-u', '--base_uri', default="ipfs://NewUriToReplace", type=str, help='The name prefix for your project')
-    parser.add_argument('-b', '--base_layer_directory', default="base", type=str,
+    parser.add_argument('-b', '--base_layer_directory', default="layers", type=str,
                         help='the location of the layer directories relative to the script')
 
     parser.add_argument('-l', '--layers', type=json.loads, default='["Eye", "Eyelid", "Frame"]',
