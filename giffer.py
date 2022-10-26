@@ -6,6 +6,15 @@ from tqdm import tqdm
 
 
 def make_gif(inpath: str, outpath: str, delay: float, final_delay: float, loop: bool):
+    """
+
+    :param inpath: directory containing the png images to combine into a gif
+    :param outpath: the output filename and directory for the final animated gif
+    :param delay: the frame delay between images
+    :param final_delay: the final delay, if not set defaults to None
+    :param loop: whether the animation should loop, defaults to False
+    :return: nothing
+    """
     # get images
     images = []
     print("Combining images")

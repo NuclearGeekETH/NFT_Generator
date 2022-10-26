@@ -19,7 +19,7 @@ for file in os.listdir(path):
 x = 0
 y = 0
 for i in range(0, len(images)):
-    newsize = int(width/row),int(width/row)
+    newsize = int(width/row), int(width/row)
     new = images[i].resize(newsize)
     new_image.paste(new, (x, y))
     if x + new.width == new_image.width:
