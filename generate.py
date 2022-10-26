@@ -117,7 +117,7 @@ if __name__ == "__main__":
 
     parser.add_argument('-m', '--max_nfts', default=500, type=int,
                         help='the maximum number of nfts to generate')
-    parser.add_argument('-n', '--starting_number', default=0, type=int,
+    parser.add_argument('-s', '--starting_number', default=0, type=int,
                         help='the starting number to use for creating the images')
 
     arguments = parser.parse_args()
