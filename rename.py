@@ -6,10 +6,9 @@ import argparse
 import re
 
 
-
 def rename_files(directory: str = None, starting_offset: int = None):
     """
-
+    Rename the files in a directory into sequential filenames with json extensions
     :param directory: the directory containing the files to rename
     :param starting_offset: the starting numeric value for the offset
     :return: nothing
