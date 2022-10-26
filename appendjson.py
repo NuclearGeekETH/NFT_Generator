@@ -2,12 +2,11 @@
 
 import os
 import json
-import sys
 
-folder =  'build/metadata/'
+folder = 'build/metadata/'
 field = "image"
 
-for x in range(0,500):
+for x in range(0, 500):
     value = ("ipfs://UPDATE URI HERE/" + str(x) + ".png")
     # if x.endswith(".json"):
     with open(os.path.join(folder, str(x) + ".json"), 'r+') as f:
