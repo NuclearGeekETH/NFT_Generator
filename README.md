@@ -26,11 +26,11 @@ The layer filenames should look like this: metal#0.1.png. This would have a 10% 
 
 You can use transparent layers too, just add them in the appropriate folder.
 
-Set the number of NFTs you want to create in line 23 for max_nfts. Set num on line 22 to the starting number you want. I like 0 but some people use 1. You can change it to any number to add to a collection as well.
+Set the number of NFTs you want to create by using the `max_nfts` flag on the command line. Set the starting number using the `starting_number` flag on the command line. I like 0 but some people use 1. You can change it to any number to add to a collection as well.
 
 This script will also create metadata for your collection. The folder names will be the trait type and the layer name before the # will be the value of the trait type. 
 
-There is a check to ensure duplicates are not created so every NFT is unique. If you keep seeing "combination exists" in your console then you might not have enough variety in your layers to create as many NFTs as you are trying to.
+There is a check to ensure duplicates are not created so every NFT is unique for a specific run. It will not keep you from generating duplicates if you run the script multiple times.  If you keep seeing "combination exists" in your console then you might not have enough variety in your layers to create as many NFTs as you are trying to.
 
 You will need to append the "image" location in each json for your final collection if you want to mint it. 
 

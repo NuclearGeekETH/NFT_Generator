@@ -50,7 +50,7 @@ def _create_meta(name_prefix: str, num: int, description: str, base_uri: str, tr
     jsonoutput.write(json.dumps(item_json))
 
 
-def generate(name_prefix: str = None, description: str = None, base_uri: str = None, base_layer_directory: str = None, layers: List[str] = None, max_nfts: int = 500):
+def generate(name_prefix: str = None, description: str = None, base_uri: str = None, base_layer_directory: str = None, layers: List[str] = None, max_nfts: int = 500, starting_num: int = 0):
     """
 
     :param name_prefix: The name for your project
@@ -72,10 +72,11 @@ def generate(name_prefix: str = None, description: str = None, base_uri: str = N
     if not max_nfts:
         raise ValueError("max_nfts not defined")
 
-    num = 0
+    nft_number = starting_num
+    count = 0
     combination_list = []
 
-    while num < max_nfts:
+    while count < max_nfts:
         trait_attributes = {}
         layers_draw = []
         layers_path = []
@@ -94,11 +95,12 @@ def generate(name_prefix: str = None, description: str = None, base_uri: str = N
             img = Image.open(layers_path[0]).convert('RGBA')
             for layer_path in layers_path[1:]:
                 img.alpha_composite(Image.open(layer_path).convert('RGBA'))
-            img.save(f'build/images/{num}.png')
-            _create_meta(name_prefix, num, description, base_uri, trait_attributes)
+            img.save(f'build/images/{nft_number}.png')
+            _create_meta(name_prefix, nft_number, description, base_uri, trait_attributes)
 
-            print(f'{num} created')
-            num += 1
+            print(f'{nft_number} created')
+            nft_number += 1
+            count += 1
 
 
 if __name__ == "__main__":
@@ -115,6 +117,8 @@ if __name__ == "__main__":
 
     parser.add_argument('-m', '--max_nfts', default=500, type=int,
                         help='the maximum number of nfts to generate')
+    parser.add_argument('-n', '--starting_number', default=0, type=int,
+                        help='the starting number to use for creating the images')
 
     arguments = parser.parse_args()
-    generate(arguments.name_prefix, arguments.description, arguments.base_uri, arguments.base_layer_directory, arguments.layers, arguments.max_nfts)
+    generate(arguments.name_prefix, arguments.description, arguments.base_uri, arguments.base_layer_directory, arguments.layers, arguments.max_nfts, arguments.starting_number)
